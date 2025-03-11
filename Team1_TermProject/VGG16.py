@@ -161,7 +161,7 @@ early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_auc', mode='max',
 # Defining The ReduceLRonPlateau Callback
 reduceLRCallback = tf.keras.callbacks.ReduceLROnPlateau(
     monitor='val_auc',
-    factor=0.8, # How much to improve the learning rate -> LR = LR*factor
+    factor=0.5, # How much to improve the learning rate -> LR = LR*factor
     patience=3,
     verbose=1,
     mode='max',
@@ -178,14 +178,14 @@ history = model.fit(trainDataset,
 
 """# FINE-TUNING"""
 
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5), loss="categorical_crossentropy", metrics=metrics)
+# model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5), loss="categorical_crossentropy", metrics=metrics)
 
 
-history = model.fit( trainDataset,
-                         validation_data=validDataset,
-                         epochs=250,
-                         callbacks=[early_stopping, reduceLRCallback],
-                         verbose=1)
+# history = model.fit( trainDataset,
+#                          validation_data=validDataset,
+#                          epochs=250,
+#                          callbacks=[early_stopping, reduceLRCallback],
+#                          verbose=1)
 
 """# PLOTS"""
 

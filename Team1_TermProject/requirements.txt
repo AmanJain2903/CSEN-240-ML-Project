@@ -1,14 +1,5 @@
-numpy
-pandas
+tensorflow
 matplotlib
 seaborn
-opencv-python
 scikit-learn
-tensorflow
-pillow
-warnings
-json5
-gc
-shutil
-pathlib
-itertools
+opencv-python
